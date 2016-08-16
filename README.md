@@ -1,5 +1,6 @@
 # productsearch
-npm  install
 
-# run  webpack-dev-server in  command prompt
+## npm  install
+
+ run  webpack-dev-server in  command prompt
 
