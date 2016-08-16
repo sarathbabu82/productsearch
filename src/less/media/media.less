@@ -1,0 +1,40 @@
+/* 
+ * ================================
+ *		Media set
+ * ================================ 
+ */
+ 
+ 
+//iphone5  320px * 568px
+//galaxy  360px * 640px
+//iphone6  375px  *  667px  
+//nexus: 412px * 732px
+//ipad  768px * 1024px
+
+
+ 
+@xs-min: 320px;
+@sm-min: 360px;
+@md-min: 375px;
+@lg-min: 412px;
+@ll-min: 768px;
+
+
+@xs-max: (@sm-min - 1);   
+@sm-max: (@md-min - 1); 
+@md-max: (@lg-min - 1); 
+@lg-max: (@ll-min - 1); 
+
+@nex-max: (@md-min + 125);
+@in-max: (@ll-min + 125);
+
+ 
+@iphon5:   ~"only screen and (max-width: @{xs-min})"; 
+@galaxy:   ~"only screen and (min-width: @{xs-min}) and (max-width: @{xs-max})"; 
+@iphon6:   ~"only screen and (min-width: @{sm-min}) and (max-width: @{sm-max})"; 
+@nexus :   ~"only screen and (min-width: @{md-min}) and (max-width: @{md-max})"; 
+
+//No more device  applicable
+@interm:   ~"only screen and (min-width: @{md-max}) and (max-width: @{nex-max})"; 
+@ipad  :   ~"only screen and (min-width: @{nex-max}) and (max-width: @{in-max})"; 
+@large :   ~"only screen and (min-width: @{in-max})"; 

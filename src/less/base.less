@@ -1,0 +1,119 @@
+/* 
+ * ================================
+ *				Base 
+ * ================================ 
+ */
+
+@import "constants/constant"; 
+@import "media/media";
+@import "star-rating/star";
+
+/**********************
+        MIXINS START
+***********************/
+
+.Flexbox(@boxWidth:@defaultboxWidth) {
+	width : @boxWidth;
+	height: @boxWidth * 1.5;  
+	border: 1px solid @borderColor;
+	margin : @boxWidth * 0.10;
+	font-size: 2em;
+	text-align: center;
+}
+
+
+.Flex(){
+  -ms-box-orient: horizontal; 
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;  
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;  
+  justify-content: center;
+  -webkit-justify-content: center;  
+}
+
+.FlexImage(@imgWidth:@defaultboxWidth){
+	width : @imgWidth;
+	height: auto;  
+}
+/**********************
+        MIXINS END
+***********************/
+
+html, body {
+    height:100%;	
+}
+
+.flex-container {
+  list-style: none;
+  height: 100%;
+  margin : 2%; 
+  border: 1px solid @borderColor;
+  overflow-y: auto;
+  font-color: @defaultThemeColor;
+  text-shadow: 0px 1px 0 #a2a2a2;
+  .Flex();
+  
+  
+}
+
+.product { 
+	  @media @iphon5 {  .Flexbox(200px);   }
+	  @media @galaxy {  .Flexbox(230px);   }
+	  @media @iphon6 {  .Flexbox(230px);   }
+	  @media @nexus {  .Flexbox(240px);   }
+	  @media @interm {  .Flexbox(250px);   }
+	  @media @ipad {  .Flexbox(250px);   }
+	  @media @large {  .Flexbox(250px);   }
+}
+
+
+.product .product-img{
+      @media @iphon5 {  .FlexImage(90px);   }
+	  @media @galaxy {  .FlexImage(90px);   }
+	  @media @iphon6 {  .FlexImage(90px);   }
+	  @media @nexus {  .FlexImage(100px);   }
+	  @media @interm {  .FlexImage(100px);   }
+	  @media @ipad {  .FlexImage(100px);   }
+	  @media @large {  .FlexImage(100px);   }
+}
+
+.product-desc {
+	font-size: 15px;
+    margin: 5px;
+	//text-shadow: 0px 1px 0 #a2a2a2;
+}
+
+.product-star{
+	text-align: left;
+	font-size: 10px;
+	margin: 10px;
+    padding-bottom: 10px;
+	border-bottom: 1px solid @borderColor;	
+}
+
+
+.product-varients{
+	margin: 10px;
+	font-size: 10px;
+}
+
+
+.product-emi{
+	font-size: 12px;
+	padding-bottom: 3px;
+	margin: 10px;
+	text-shadow: 0 0 0;
+	border-bottom: 1px solid @borderColor;	
+}
+
+.product-price{
+	font-size: 15px;
+    font-weight: bold;
+    text-shadow: 0 0 0;
+    line-height: 20px;
+}
