@@ -1,6 +1,8 @@
-# productsearch
+# Product search (ES6 Code)
 
-## npm  install
+#Installation  & run step 
 
- run  webpack-dev-server in  command prompt
+> npm  install
+
+> webpack-dev-server    //in  command prompt
 
