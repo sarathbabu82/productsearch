@@ -1,8 +1,15 @@
 # Product search (ES6 Code)
 
-#Installation  & run step 
+## Install
 
+```sh
 > npm  install
 
 > webpack-dev-server    //in  command prompt
 
+```
+
+
+## License
+
+MIT.
