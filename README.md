@@ -1,6 +1,6 @@
 # Product search (ES6 Code)
 
-## Install
+## Installation and run step
 
 ```sh
 > npm  install
