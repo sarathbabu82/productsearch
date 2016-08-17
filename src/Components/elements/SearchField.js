@@ -14,14 +14,13 @@ export default class SearchField extends React.Component {
 
     searchHandler(event) {
         var searchKey = event.target.value;
-		console.log("searchKey"+ searchKey);
-        this.setState({searchKey: searchKey});
+		this.setState({searchKey: searchKey});
         this.props.searchHandler(searchKey);
     }
     
 	render() {
         return (
-            <div className="bar bar-standard bar-header-secondary">
+            <div className="">
                 <input type="search" value={this.state.symbol} onChange={this.searchHandler}/>
             </div>
         );

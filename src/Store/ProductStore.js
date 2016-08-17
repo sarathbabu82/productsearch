@@ -130,7 +130,7 @@ class ProductStore extends EventEmitter {
             });  
    }
   
-  filterByRelevance() {          
+  filterByRelevance(searchKey) {          
             this.filtered = this.filtered.sort(function (element) {
                 var filterby = element.productType;
                 return filterby.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
@@ -138,26 +138,26 @@ class ProductStore extends EventEmitter {
    }
    
    filterByPopular() {            
-           this.filtered = this.filtered.sort(function (element) {
-                return element.rating - element.rating;
+           this.filtered = this.filtered.sort(function (e1,e2) {
+                return e2.rating - e1.rating;
             });            
    }
   
    filterByLowPrice() {         
-            this.filtered = this.filtered.sort(function (element) {
-                return element.price <  elemen.price? 1 : 0;               
+            this.filtered = this.filtered.sort(function (e1,e2) {
+                return e1.price -  e2.price;               
             });           
    }
    
-   filterByHightPrice(searchKey) {           
-            this.filtered = this.filtered.sort(function (element) {
-                return element.price >  elemen.price? 1 : 0;               
+   filterByHightPrice() {           
+            this.filtered = this.filtered.sort(function (e1,e2) {
+                return e2.price -  e1.price;               
             });                   
    }
    
-    filterByNew(searchKey) {          
-             this.filtered = this.filtered.sort(function (element) {
-                 return element.updatedAt <  elemen.updatedAt? 1 : 0;               
+    filterByNew() {          
+             this.filtered = this.filtered.sort(function (e1,e2) {
+                 return e1.updatedAt <  e2.updatedAt;               
             }); 
    }
   
@@ -169,22 +169,22 @@ class ProductStore extends EventEmitter {
 			break;
 		  }
 		  case "FILTER_BY_RELEVANTS": {
-			this.filterByRelevance();
+			this.filterByRelevance(action.searchKey);
 			this.emit("change");
 			break;
 		  }
 		  case "FILTER_BY_POPULAR": {     
-			filterByPopular();
+			this.filterByPopular();
 			this.emit("change");
 			break;
 		  }
 		   case "FILTER_BY_LOWPRICE": {
-			this.filterByLowPrice(action.warrior)
+			this.filterByLowPrice()
 			this.emit("change");
 			break;
 		  }
 		  case "FILTER_BY_HIGHPRICE": {
-			filterByHightPrice()
+			this.filterByHightPrice()
 			this.emit("change");
 			break;
 		  }

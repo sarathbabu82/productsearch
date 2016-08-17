@@ -7,9 +7,10 @@ export function searchProducts(searchKey) {
   });
 }
 
-export function filterByRelevant() {
+export function filterByRelevant(searchKey) {
   dispatcher.dispatch({
-    type: "FILTER_BY_RELEVANTS"
+    type: "FILTER_BY_RELEVANTS",
+	searchKey
   });
 }
 
