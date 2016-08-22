@@ -1,4 +1,4 @@
-# Product search (ES6 Code)
+# react flux product search Example (ES6 Code)
 
 ## Installation and run step
 
